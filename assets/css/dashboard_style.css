@@ -1,0 +1,19 @@
+.not-publish {
+	color:#F39C12;
+	font-style: italic;
+}
+
+.publish {
+	color :green;
+	font-style: italic;
+}
+
+.tab-pane {
+	margin-top: 40px;
+}
+
+li.pull-left a{
+	margin: 0px;
+	padding: 0px;
+}
+
