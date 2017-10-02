@@ -106,7 +106,7 @@ Author URI : http://www.wpfreeware.com/
   background-color: #1ABC9C;
 }
 .single_blog_archive {
-  border-bottom: 3px solid #1ABC9C;  
+  border: 3px solid #fff;  
 }
 .blog_title a:hover{
   color: #1ABC9C;

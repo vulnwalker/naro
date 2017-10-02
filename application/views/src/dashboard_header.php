@@ -15,7 +15,12 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
           
+          <!-- Notifications: style can be found in dropdown.less -->
+         
+          <!-- Tasks: style can be found in dropdown.less -->
+         
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -49,7 +54,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="<?php echo base_url()."dashboard/profile"?>" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="<?php echo base_url()."Admin/logout"?>" class="btn btn-default btn-flat">Sign out</a>
@@ -59,7 +64,7 @@
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            <a href="<?php echo base_url();?>" target="_blank" ><i class="fa fa-home"></i></a>
           </li>
         </ul>
       </div>

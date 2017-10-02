@@ -14,7 +14,7 @@
 
     <!-- Main content -->
      <section class="content">
-
+    <?php echo $this->session->flashdata('msg'); ?>
       <!-- SELECT2 EXAMPLE -->
       <div class="box box-default">
         <div class="box-header with-border">
@@ -48,8 +48,8 @@
                           </td></tr>
                        </table>
                        <?php
-                          echo btn('col-md-2','btn-primary btn-block','submit','submit','Simpan','height:30px;');
-                          echo btn('col-md-2','btn-danger btn-block','reset','reset','Batal','height:30px;');   
+                          echo btn('col-md-2','btn-primary btn-block','submit','submit','Simpan','height:40px;');
+                          echo btn('col-md-2','btn-danger btn-block','reset','reset','Batal','height:40px;');   
                         ?>
                         <br><br>
                     </form>
@@ -68,3 +68,11 @@
 
     </section>
     <!-- /.content -->
+
+<script>
+  window.setTimeout(function() {
+    $(".alert").slideDown(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+      });
+  }, 4000);
+</script>

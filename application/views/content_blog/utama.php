@@ -1,18 +1,16 @@
 
 <?php if(empty($artikel)){ ?>
-<div class="col-lg-8 col-md-8 col-sm-8">
+<div class="col-lg-9 col-md-8 col-sm-8">
     <div class="courseArchive_content">
        <h3 class="wow fadeInUp animated not-found" style="visibility: visible; animation-name: fadeInUp;"><i class="fa fa-search"></i> Maaf artikel tidak di temukan</h3>
    </div>
  </div>      
 <?php }else{ ?>
- 
       <!-- start course content -->
-          <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="col-lg-9 col-md-8 col-sm-8">
             <div class="courseArchive_content">
               <!-- start blog archive  -->
               <div class="row">
-                <!-- start single blog archive -->
                 <?php
 
                  foreach ($artikel as $a) 
@@ -20,32 +18,40 @@
                   $string = htmlspecialchars_decode($a->body);
                   $src = getsrc($string);
                   echo'
-                  <div class="col-lg-12 col-12 col-sm-12">
-                    <div class="single_blog_archive wow fadeInUp">
-                      <div class="blogimg_container">
-                        <a href="'.base_url().'blog/read/'.$a->id.'/'.$a->url.'" class="blog_img">
-                          <img alt="img" src="'.$src.'">
-                        </a>
-                      </div>';
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                      <div class="single_blog_archive">
+                        <div class="col-lg-4 col-md-4 col-sm-12 imgbox">
+                            <a href="'.base_url().'blog/read/'.$a->id.'/'.$a->url.'" class="img_blog">   
+                              <img src="'.$src.'" alt="'.$a->title.'">
+                            </a>
+                        </div>';
+
                         if (empty($kata_kunci)) {
                             $judul = $a->title;
                         }else{
                             $judul = preg_replace("/(" . $kata_kunci . ")/i", "<b style='color:#1ABC9C !important;'>$1</b>", $a->title);
                         }
-                      echo'
-                      <h2 class="blog_title"><a href="'.base_url().'blog/read/'.$a->id.'/'.$a->url.'">'.$judul.'</a></h2>
-                      <div class="blog_commentbox">
-                        <p><i class="fa fa-user"></i>'.$a->penulis.'</p>
-                        <p><i class="fa fa-calendar"></i>'.$a->tanggal.'</p>
-                        
-                      </div>
-                      <p class="blog_summary">'.karakter_limit(priview_isi($string),300).'</p>
-                      <a class="blog_readmore" href="'.base_url().'blog/read/'.$a->id.'/'.$a->url.'">Read More</a>
-                    </div>
-                  </div>';
-                 }
+
+                        echo'
+                          <div class="col-lg-8 col-md-8 col-sm-12">
+                            <div class="judul_blog">
+                              <a href="'.base_url().'blog/read/'.$a->id.'/'.$a->url.'">'.$judul.'</a>                       
+                            </div>
+                            <div class="blog_commentbox utama_bx">
+                              <p><i class="fa fa-user"></i>'.$a->penulis.'</p>
+                              <p><i class="fa fa-calendar"></i>'.$a->tanggal.'</p>
+                              <p><i class="fa fa-eye"></i> '.$a->jumlah_baca.' Viewer</p>
+                            </div>
+                             <p>'.karakter_limit(priview_isi($string),350).'</p>  
+                              
+                          </div>
+                          <a class="blog_readmore i_read" href="'.base_url().'blog/read/'.$a->id.'/'.$a->url.'">Read More</a>
+                        </div>
+                    </div>';
+                  }
                 ?>
-                
+
+                <!-- start single blog archive -->
               </div>
               <!-- end blog archive  -->
               <nav>

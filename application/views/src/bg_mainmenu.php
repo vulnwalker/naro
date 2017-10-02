@@ -13,6 +13,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
+              
               <!-- LOGO -->
               <!-- TEXT BASED LOGO -->
               <a class="navbar-brand" href="<?php echo base_url();?>">Naro<span>Smart</span></a>              
@@ -20,6 +21,7 @@
                <!-- <a class="navbar-brand" href="index.html"><img src="<?php echo base_url();?>/assets/img/logo.png" alt="logo"></a>  -->            
                      
             </div>
+            
             <div id="navbar" class="navbar-collapse collapse">
             <div class="navbar-right">
                 <form class="searchbox hidden-xs" action="<?php echo base_url();?>blog/cari" method="get">
@@ -29,6 +31,16 @@
                   </form>
               </div>
               <ul id="top-menu" class="nav navbar-nav navbar-left main-nav">
+                <li class="visible-xs">
+                   <form class="classNameHere" role="search">
+                      <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                      <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                      </div>
+                    </div>
+                    </form>
+                </li>
                 <li class="active"><a href="<?php echo base_url();?>">Home</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kategori <span class="caret"></span></a>

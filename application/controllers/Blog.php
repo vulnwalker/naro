@@ -25,7 +25,7 @@ class Blog extends CI_Controller {
  
         $config['uri_segment'] = $page; //merupakan posisi pagination dalam url pada kesempatan ini saya menggunakan method get untuk menentukan posisi pada url yaitu per_page
  
-		$config['full_tag_open'] = "<ul class='pagination wow fadeInLeft'>";
+		$config['full_tag_open'] = "<ul class='pagination'>";
 		$config['full_tag_close'] ="</ul>";
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
@@ -46,7 +46,7 @@ class Blog extends CI_Controller {
         $data['paging']=$this->pagination->create_links();
         $data['jlhpage']=$page;
         $data['artikel'] = $this->crud->get_allartikel($batas,$offset); //query model semua barang
-
+        $data['judul'] = "NaroSmart - Blog";
 		// $sql   = "SELECT *from artikel order by id DESC";
 		// $data['artikel'] = $this->db->query($sql)->result();
 		$this->bghome->load('bghome',$this->folder.'/utama',$data);
@@ -104,9 +104,9 @@ class Blog extends CI_Controller {
         $data['kata_kunci'] = $key;
  
         $data['artikel'] = $this->crud->get_allartikel($batas,$offset,$search); //query model semua barang
- 
+        $data['judul'] = 'Pencarian - '.$key.' | NaroSmart - Blog';
         $this->bghome->load('bghome',$this->folder.'/utama',$data);
- 
+        
     }
 
 	public function read($id,$url)
@@ -136,6 +136,7 @@ class Blog extends CI_Controller {
 			'tanggal' =>  $res[0]['tanggal'],
 			'penulis' =>  $res[0]['penulis'],
 			'jumlah_baca' =>  $res[0]['jumlah_baca'],
+            'judul' =>  ''.$res[0]['title'].' | NaroSmart - Blog'
 			);
 		$this->bghome->load('bghome',  $this->folder.'/read_artikel',$data);	
 	}
@@ -186,8 +187,10 @@ class Blog extends CI_Controller {
         $config['num_tag_open'] = '<li class="page">';
         $config['num_tag_close'] = '</li>';
         $this->pagination->initialize($config);
+        $res = $this->db->get_where('kategori', array('id' => $id))->result_array();
         $data['paging']=$this->pagination->create_links();
         $data['jlhpage']=$page;
+        $data['judul'] = 'Kategori - '.$res[0]['nama_kategori'].' | NaroSmart - Blog';
         $data['artikel'] = $this->crud->get_allartikel($batas,$offset,$search,$kat); //query model semua barang
 
 		// $sql   = "SELECT *from artikel WHERE kategori='$id' order by id DESC";

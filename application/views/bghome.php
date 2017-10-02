@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NaroSmart - Blog</title>
+    <title><?php echo $judul; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php
       // Css Library //
@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       echo srccss('css/slick.css');
       echo srccss('css/jquery.circliful.css');
       echo srccss('css/animate.css');
-      echo srccss('css/queryLoader.css');
+      // echo srccss('css/queryLoader.css');
       echo srccss('css/jquery.tosrus.all.css');
       echo srccss('css/green-theme.css');
       echo srccss('css/style.css');
@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <!--=========== BEGIN COURSE BANNER SECTION ================-->
     <section id="courseArchive">
-      <div class="container">
+      <div class="container resize_container">
         <div class="row">
     <?php 
 
@@ -58,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       echo srcjs('plugins/jQuery/jQuery-2.1.4.min.js');
       echo srcjs('plugins/bootstrap/js/bootstrap.min.js');
       echo srcjs('plugins/bootstrap/js/bootstrap.js');
-      echo srcjs('js/queryloader2.min.js');
+      // echo srcjs('js/queryloader2.min.js');
       echo srcjs('js/wow.min.js');
       echo srcjs('js/slick.min.js');
       echo srcjs('js/jquery.easing.1.3.js');

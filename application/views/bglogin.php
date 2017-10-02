@@ -67,14 +67,22 @@ if($this->session->userdata('id') <> '')
                </div>
             </div>
          </div>
-     
+          
       </div>
+       <?php echo $this->session->flashdata('msg'); ?>
+
 
 
       <?php
          echo srcjs('js/js_login.js');
       ?>
-<script type="text/javascript">    
+<script type="text/javascript"> 
+
+window.setTimeout(function() {
+    $(".alert").slideDown(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+      });
+  }, 4000);
     //fungsi displayTime yang dipanggil di bodyOnLoad dieksekusi tiap 1000ms = 1detik
     function tampilkanwaktu(){
         //buat object date berdasarkan waktu saat ini

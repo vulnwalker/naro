@@ -70,8 +70,8 @@
 
                        </table>
                        <?php
-                          echo btn('col-md-2','btn-primary btn-block','submit','submit','Post Artikel','height:30px;');
-                          echo btn('col-md-2','btn-danger btn-block','reset','reset','Batal','height:30px;');   
+                          echo btn('col-md-2','btn-primary btn-block','submit','submit','Edit Artikel','height:40px;');
+                          echo btn('col-md-2','btn-danger btn-block','reset','reset','Batal','height:40px;');   
                         ?>
                         <br><br>
                         </form>
@@ -90,3 +90,10 @@
 
     </section>
     <!-- /.content -->
+<script>
+  window.setTimeout(function() {
+    $(".alert").slideDown(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+      });
+  }, 4000);
+</script>

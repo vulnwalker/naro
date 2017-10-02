@@ -23,6 +23,7 @@ if($this->session->userdata('id')=='')
           echo srccss('plugins/icheck/skins/flat/red.css');
           echo srccss('css/dashboard_style.css');
           echo srccss('css/custom.css');
+          echo srccss('css/animate.css');
     ?>
   </head>
 <body class="hold-transition skin-black sidebar-mini">
@@ -36,6 +37,7 @@ if($this->session->userdata('id')=='')
 
 <!-- Contents -->  
   <div class="content-wrapper">
+
     <?php echo $contents;?>
   </div>
   
@@ -87,6 +89,15 @@ $(function () {
       });
   });
   CKEDITOR.replace('editor1');
+
+  window.setTimeout(function() {
+    $(".alert").slideDown(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+      });
+  }, 4000);
+   
+  // $('#alert').slideDown('slow').delay(3000).slideUp('slow').delay(3000);
+  // $('.alert').fadeIn('slow');
 </script>
 
 

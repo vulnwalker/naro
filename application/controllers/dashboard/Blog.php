@@ -33,7 +33,25 @@ class Blog extends CI_Controller {
 	        					'penulis' => $this->session->userdata('nama'),
 	        					'jumlah_baca' => 0
 	        					);
-				$this->db->insert($this->tables,$data);
+				$inputdata = $this->db->insert($this->tables,$data);
+				if ($inputdata != false) {//or any controll you could make in model method return
+				    $msg = "<div class='alert alert-success' role='alert'>
+				    		<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+				    			<span aria-hidden='true'>&times;</span>
+				    		</button>
+  							<strong>Berhasil!</strong>
+  							<p>Data artikel berhasil di simpan </p>
+							</div>";
+				} else {
+				    $msg = "<div class='alert alert-danger'> 
+				    		<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+				    			<span aria-hidden='true'>&times;</span>
+				    		</button>
+  							<strong>Gagal!</strong>
+  							<p>Coba Lakukan Lagi</p>
+				    		</div>";
+				}
+				$this->session->set_flashdata("msg", $msg);
 				redirect($this->uri->segment(1).'/'.$this->uri->segment(2).'/artikel');
 	        }	
 	}
@@ -64,10 +82,19 @@ class Blog extends CI_Controller {
 	        			'url' => strtolower(seo_title($judul)),
 	       				'kategori' => $kategori,
 	   					'tanggal' => datenow(),
-	        			'penulis' => 'Yoga',
+	        			'penulis' => $this->session->userdata('nama')
         				);
-
-        	$this->crud->update($this->tables,$data, $this->pk,$id);
+        	$editdata = $this->crud->update($this->tables,$data, $this->pk,$id);
+        	// if ($editdata) {//or any controll you could make in model method return
+				    $msg = "<div class='alert alert-success' role='alert'>
+				    		<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+				    			<span aria-hidden='true'>&times;</span>
+				    		</button>
+  							<strong>Berhasil!</strong>
+  							<p>Data berhasil di ubah </p>
+							</div>";
+				
+			$this->session->set_flashdata("msg", $msg);
         	redirect($this->uri->segment(1).'/'.$this->uri->segment(2).'/artikel');
         }	
 	}
@@ -96,7 +123,25 @@ class Blog extends CI_Controller {
 	        					'deskripsi' => $deskripsi,
 	        					'type'	=> 'artikel'
 	        				   );
-				$this->db->insert($this->tables_kat,$data);
+				$inputdata = $this->db->insert($this->tables_kat,$data);
+				if ($inputdata != false) {//or any controll you could make in model method return
+				    $pesan = "<div class='alert alert-success' role='alert' id='alert'>
+				    		<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+				    			<span aria-hidden='true'>&times;</span>
+				    		</button>
+  							<strong>Berhasil!</strong>
+  							<p>Data kategori berhasil di simpan </p>
+							</div>";
+				} else {
+				    $pesan = "<div class='alert alert-danger'> 
+				    		<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+				    			<span aria-hidden='true'>&times;</span>
+				    		</button>
+  							<strong>Gagal!</strong>
+  							<p>Coba lakukan ulang</p>
+				    		</div>";
+				}
+				$this->session->set_flashdata("pesan", $pesan);
 				redirect($this->uri->segment(1).'/'.$this->uri->segment(2).'/kategori');
 	        }	
 	}
@@ -122,7 +167,17 @@ class Blog extends CI_Controller {
 	        			'deskripsi' => $deskripsi
         				);
 
-        	$this->crud->update($this->tables_kat,$data, $this->pk,$id);
+
+        	$editdata = $this->crud->update($this->tables_kat,$data, $this->pk,$id);
+        	
+				    $msg = "<div class='alert alert-success' role='alert'>
+				    		<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+				    			<span aria-hidden='true'>&times;</span>
+				    		</button>
+  							<strong>Berhasil!</strong>
+  							<p>Data kategori berhasil di ubah </p>
+							</div>";
+			$this->session->set_flashdata("msg", $msg);	
         	redirect($this->uri->segment(1).'/'.$this->uri->segment(2).'/kategori');
         }	
 	}

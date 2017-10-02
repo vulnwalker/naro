@@ -4,7 +4,7 @@
           $populer = $this->db->query($sql1)->result();
           $kategori = $this->db->query($sql2)->result();
         ?>
-        <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="col-lg-3 col-md-4 col-sm-4">
             <div class="courseArchive_sidebar">
               <!-- start single sidebar -->
               <div class="single_sidebar">

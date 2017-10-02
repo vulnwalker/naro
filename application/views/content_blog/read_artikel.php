@@ -9,26 +9,33 @@
       $src = getsrc($string);
    ?>
           <!-- start course content -->
-          <div class="col-lg-8 col-md-8 col-sm-8">
-            <div class="courseArchive_content">
+          <div class="col-lg-9 col-md-9 col-sm-9">
+            <div class="courseArchive_content readart">
               <!-- start blog archive  -->
               <div class="row">
                 <!-- start single blog -->
+               <!--  <div class="col-lg-1">
+                  
+                </div> -->
                 <div class="col-lg-12 col-12 col-sm-12">
                   <div class="single_blog">
                     <div class="blogimg_container">
-                      <a href="#" class="blog_img">
+                    <div class="topbox"> 
+                       <h2 class="judul_blog"><a href="blog-single.html"><?php echo $title?></a></h2>
+                        <div class="blog_commentbox">
+                          <p>Posted by <i class="fa fa-user"></i><?php echo $penulis?></p>
+                          <p><i class="fa fa-calendar"></i><?php echo $tanggal?></p>
+                          <a href="#"><i class="fa fa-eye"></i><?php echo $jumlah_baca?></a>
+                        </div>
+                        <hr> 
+                     </div>
+                      <!-- <a href="#" class="blog_img">
                         <img alt="img" src="<?php
-                        echo $src ?>">
-                      </a>
+                        //echo $src 
+                        ?>">
+                      </a> -->
                     </div>
-                    <h2 class="blog_title"><a href="blog-single.html"><?php echo $title?></a></h2>
-                    <div class="blog_commentbox">
-                      <p><i class="fa fa-user"></i><?php echo $penulis?></p>
-                      <p><i class="fa fa-calendar"></i><?php echo $tanggal?></p>
-                      <a href="#"><i class="fa fa-eye"></i><?php echo $jumlah_baca?></a>
-                    </div>
-                    <?php echo isi_artikel($string);?>
+                    <p><?php echo $string; ?></p>
                   </div>
                   <div class="single_blog_prevnext">
 
@@ -68,20 +75,20 @@
                   $srcl = getsrc($stringl);
                   echo'
                   <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="single_blog_archive wow fadeInUp">
+                    <div class="single_blog_archive sets">
                       <div class="blogimg_container">
-                        <a href="'.base_url().'blog/read/'.$l->id.'/'.$l->url.'" class="blog_img">
+                        <a href="'.base_url().'blog/read/'.$l->id.'/'.$l->url.'" class="blog_img settinggi">
                           <img src="'.$srcl.'" alt="img">
                         </a>
                       </div>
-                      <h2 class="blog_title"><a href="'.base_url().'blog/read/'.$l->id.'/'.$l->url.'"></a>'.$l->title.'</h2>
-                      <div class="blog_commentbox">
+                      <div class="judul_blog setmargin"><a href="'.base_url().'blog/read/'.$l->id.'/'.$l->url.'"></a>'.$l->title.'</div>
+                      <div class="blog_commentbox utama_bx">
                         <p><i class="fa fa-user"></i>'.$l->penulis.'</p>
                         <p><i class="fa fa-calendar"></i>'.$l->tanggal.'</p>
-                        <a href="#"><i class="fa fa-eye"></i>'.$l->jumlah_baca.'</a>
+                        <p><i class="fa fa-eye"></i>'.$l->jumlah_baca.' Viewer</p>
                       </div>
-                      <p class="blog_summary">'.karakter_limit(priview_isi($stringl),150).'</p>
-                      <a href="'.base_url().'blog/read/'.$l->id.'/'.$l->url.'" class="blog_readmore">Read More</a>
+                      <p class="utama_bx_read">'.karakter_limit(priview_isi($stringl),240).'</p>
+                      <a href="'.base_url().'blog/read/'.$l->id.'/'.$l->url.'" class="blog_readmore iread">Read More</a>
                     </div>
                   </div>';
                   }

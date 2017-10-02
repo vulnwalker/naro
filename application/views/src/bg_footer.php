@@ -77,12 +77,17 @@
       <div class="footer_bottom">
         <div class="container">
           <div class="row">
-            
-              <div class="footer_bootomLeft" align="center">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="footer_bootomLeft">
                 <p> NAROSMART &copy; 2017</p>
               </div>
-          
-           
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <div class="footer_bootomRight">
+                <p><i class="fa fa-map-marker"></i> 
+              <a href="#" rel="nofollow"> Taman Pahlawan Bandung</a></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
