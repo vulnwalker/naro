@@ -8,6 +8,10 @@
 <?php }else{ ?>
       <!-- start course content -->
           <div class="col-lg-9 col-md-8 col-sm-8">
+           <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active">Blog</li>
+          </ol>
             <div class="courseArchive_content">
               <!-- start blog archive  -->
               <div class="row">

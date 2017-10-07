@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Blog extends CI_Controller {
 	var $table = "artikel";
+    var $komen = "komentar";
 	var $pengunjung = "pengunjung";
 	var $folder = "content_blog";
 	var $pk		= "id";
@@ -198,6 +199,28 @@ class Blog extends CI_Controller {
 
 		$this->bghome->load('bghome',$this->folder.'/utama',$data);
 	}
+
+    public function addkomen($id)
+    {
+        $nama = $_POST['nama'];
+        $id_kat = $_POST['id_kat'];
+        $email = $_POST['email'];
+        $komentar = $_POST['komentar'];
+        date_default_timezone_set("Asia/Jakarta"); //Your timezone
+        $time = date('Y-m-d H:i:s');
+        $data  = array(
+                        'komentar_dari' => $id_kat,
+                        'nama' => $nama,
+                        'email' => $email,
+                        'waktu' =>  $time,
+                        'isi_komentar' => $komentar,
+                        'ket' => 'artikel'
+                        );
+        $inputdata = $this->db->insert($this->komen,$data);
+        // if ($inputdata != false) {
+        //         $this->bghome->load('bghome',$this->folder.'/utama',$data);
+        // }
+    }
 
 	
 }

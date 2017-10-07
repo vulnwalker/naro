@@ -1,0 +1,25 @@
+	  function setPage_HeaderOther(){
+   		
+	return 
+	"<table width=\"100%\" class=\"menubar\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style='margin:0 0 0 0'>
+	<tr><td class=\"menudottedline\" width=\"40%\" height=\"20\" style='text-align:right'><B>
+	<A href=\"pages.php?Pg=rkbmdPengadaan_v3\" title='RKBMD PENGADAAN MURNI' > PENGADAAN </a> |
+	<A href=\"pages.php?Pg=rkbmdPemeliharaan_v3\" title='RKBMD PEMELIHARAAN MURNI'  style='color : blue;' > PEMELIHARAAN </a> |
+	<A href=\"pages.php?Pg=rkbmdPersediaan_v3\" title='RKBMD PESEDIAAN MURNI' > PERSEDIAAN </a> |
+	<A href=\"pages.php?Pg=rencana_pemanfaatan\" title='RKBMD PEMANFAATAN MURNI' > PEMANFAATAN </a> |
+	<A href=\"pages.php?Pg=rpebmd\" title='RKBMD PEMANFAATAN MURNI' > PEMINDAH TANGANAN </a> |
+	<A href=\"pages.php?Pg=rphbmd\" title='RKBMD PEMANFAATAN MURNI' > PENGHAPUSAN </a> |
+	&nbsp&nbsp&nbsp	
+	</td></tr>
+	</table>"
+	.
+	"<table width=\"100%\" class=\"menubar\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style='margin:0 0 0 0'>
+	<tr><td class=\"menudottedline\" width=\"40%\" height=\"20\" style='text-align:right'><B>
+	<A href=\"pages.php?Pg=rkbmdPemeliharaan_v3\" title='RKBMD PENGADAAN MURNI' style='color : blue;' > INPUT </a> |
+	<A href=\"pages.php?Pg=koreksiPenggunaPemeliharaan\" title='RKBMD PENGADAAN MURNI' > KOREKSI </a> |
+	
+	&nbsp&nbsp&nbsp	
+	</td></tr>
+	</table>"
+	;
+	}

@@ -19,6 +19,7 @@ if($this->session->userdata('id') <> '')
    </head>
 
 <?php
+date_default_timezone_set("Asia/Jakarta");
    $jam   = date('H:i:s');
    $jam4  = '04:00'; $jam10 = '10:00'; $jam16 = '16:00'; $jam18 = '18:00';
 
